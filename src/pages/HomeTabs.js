@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 import BookList from './BookList';
+import ClientList from './ClientList';
 
 
 export default function HomeTabs() {
@@ -31,7 +32,7 @@ export default function HomeTabs() {
           </TabList>
         </Box>
         <TabPanel value="1"><BookList /></TabPanel>
-        <TabPanel value="2"></TabPanel>
+        <TabPanel value="2"><ClientList /></TabPanel>
         <TabPanel value="3"></TabPanel>
       </TabContext>
     </Box>
