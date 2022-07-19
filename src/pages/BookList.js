@@ -19,7 +19,7 @@ export default function BookList() {
   }, []);
 
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       {console.log(books)}
       {books.map(book => {
         return (

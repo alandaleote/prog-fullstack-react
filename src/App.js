@@ -1,12 +1,18 @@
-import './App.css';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/system/Container';
+
 import HomeTabs from './pages/HomeTabs';
 
 function App() {
   return (
-    <div className="App">
-      <HomeTabs />
-    </div>
-  );
+    <React.Fragment>
+      <CssBaseline />
+      <Container>
+        <HomeTabs />
+      </Container>
+    </React.Fragment>
+  )
 }
 
 export default App;
