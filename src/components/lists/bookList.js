@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import API from '../services/api';
+import API from '../../services/api';
 
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
@@ -7,36 +7,35 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import PersonIcon from '@mui/icons-material/Person';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-export default function ClientList() {
-  const [clients, setClients] = useState([])
+export default function BookList() {
+  const [books, setBooks] = useState([])
 
   useEffect(() => {
-    API.get("/clients")
-      .then((response) => setClients(response.data))
+    API.get("/books")
+      .then((response) => setBooks(response.data))
       .catch((err) => console.log(err))
   }, []);
 
   return (
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      {console.log(clients)}
-      {clients.map(client => {
+      {console.log(books)}
+      {books.map(book => {
         return (
           <ListItem
             alignItems="flex-start"
-            key={client.id}
+            key={book.id}
           >
-            <ListItemButton
-            >
+            <ListItemButton>
               <ListItemAvatar>
                 <Avatar>
-                  <PersonIcon />
+                  <MenuBookIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText
-                primary={client.name}
-                secondary={client.phone}
+                primary={book.name}
+                secondary={book.author}
               />
             </ListItemButton>
           </ListItem>

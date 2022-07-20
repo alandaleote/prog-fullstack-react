@@ -1,18 +1,18 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/system/Container';
+import { Link } from "react-router-dom";
+import './app.css';
 
-import HomeTabs from './pages/HomeTabs';
-
-function App() {
+export default function App() {
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container>
-        <HomeTabs />
-      </Container>
-    </React.Fragment>
-  )
+    <div>
+      <nav>
+        <p className='bold'>Biblioteca</p>
+        <ul>
+          <li><Link to="/listas">Listas</Link></li>
+          <li><Link to="/clientenovo">Cadastrar Cliente</Link></li>
+          <li><Link to="/livronovo">Cadastrar Livro</Link></li>
+        </ul>
+      </nav>
+    </div>
+  );
 }
-
-export default App;
